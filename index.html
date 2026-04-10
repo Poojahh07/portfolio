@@ -3,21 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pooja — BCA Student</title>
+  <title>Pooja — BCA Student & Developer</title>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --bg:       #faf7f2;
-      --surface:  #f3ede3;
-      --card:     #fffdf9;
-      --border:   #e8dfd0;
-      --text:     #2a2118;
-      --muted:    #8a7e6e;
-      --accent:   #b5622b;
-      --accent-light: #fdf0e8;
-      --soft:     #f7f1e8;
+      --bg:           #faf7f2;
+      --surface:      #f3ede3;
+      --card:         #fffdf9;
+      --border:       #e8dfd0;
+      --text:         #1c1814;
+      --muted:        #7a6e60;
+      --accent:       #2c4a7c;
+      --accent-light: #eef2f9;
+      --accent-mid:   #c8d4ea;
+      --soft:         #f5f2ee;
     }
 
     html { scroll-behavior: smooth; }
@@ -30,362 +31,334 @@
       overflow-x: hidden;
     }
 
-    /* ── NAV ── */
+    /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       padding: 1.1rem 6%;
       display: flex; justify-content: space-between; align-items: center;
-      background: rgba(250,247,242,0.92);
-      backdrop-filter: blur(14px);
+      background: rgba(250,247,242,0.95);
+      backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
     }
     .nav-logo {
       font-family: 'Lora', serif;
-      font-size: 1.25rem; color: var(--text);
-      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 1.2rem; color: var(--text); letter-spacing: -0.01em;
     }
-    .nav-logo span { color: var(--accent); font-style: italic; }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
     .nav-links a {
       color: var(--muted); text-decoration: none;
-      font-size: 0.85rem; font-weight: 500;
+      font-size: 0.82rem; font-weight: 500; letter-spacing: 0.02em;
       transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--accent); }
     .nav-badge {
-      background: var(--accent-light);
-      color: var(--accent);
-      font-size: 0.7rem; font-weight: 600;
-      padding: 0.3rem 0.8rem; border-radius: 99px;
-      border: 1px solid #e8c4a8;
+      background: var(--accent-light); color: var(--accent);
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.04em;
+      padding: 0.3rem 0.9rem; border-radius: 4px;
+      border: 1px solid var(--accent-mid);
     }
 
-    /* ── HERO ── */
+    /* HERO */
+    .hero-wrap { max-width: 1200px; margin: 0 auto; }
     .hero {
       min-height: 100vh;
-      display: grid; grid-template-columns: 1fr 1fr;
+      display: grid; grid-template-columns: 1.1fr 0.9fr;
       align-items: center;
       padding: 7rem 6% 4rem;
-      gap: 4rem;
-      max-width: 1200px; margin: 0 auto;
+      gap: 5rem;
     }
-    .hero-left { }
-    .hero-tag {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: var(--accent-light);
-      border: 1px solid #e8c4a8;
-      color: var(--accent);
-      padding: 0.35rem 0.9rem; border-radius: 99px;
-      font-size: 0.78rem; font-weight: 600;
-      margin-bottom: 1.8rem;
-      animation: fadeUp 0.6s ease both;
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 1.6rem;
+      animation: fadeUp 0.5s ease both;
     }
-    .hero-tag::before {
-      content: '';
-      width: 7px; height: 7px;
-      background: var(--accent); border-radius: 50%;
-      animation: pulse 2.5s infinite;
-    }
-    @keyframes pulse {
-      0%,100% { opacity:1; transform:scale(1); }
-      50% { opacity:0.4; transform:scale(0.7); }
+    .hero-eyebrow::before {
+      content: ''; display: block;
+      width: 24px; height: 1.5px; background: var(--accent);
     }
     .hero h1 {
       font-family: 'Lora', serif;
-      font-size: clamp(2.6rem, 5vw, 4.2rem);
-      font-weight: 600; line-height: 1.15;
-      letter-spacing: -0.02em;
-      margin-bottom: 1.4rem;
-      animation: fadeUp 0.6s 0.1s ease both;
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      font-weight: 600; line-height: 1.2;
+      letter-spacing: -0.025em; margin-bottom: 1.4rem;
+      animation: fadeUp 0.5s 0.1s ease both;
     }
     .hero h1 em { font-style: italic; color: var(--accent); }
     .hero-bio {
-      font-size: 1rem; color: var(--muted);
-      line-height: 1.9; max-width: 460px;
+      font-size: 0.97rem; color: var(--muted);
+      line-height: 1.95; max-width: 480px;
       margin-bottom: 2.2rem;
-      animation: fadeUp 0.6s 0.2s ease both;
+      animation: fadeUp 0.5s 0.2s ease both;
     }
     .hero-bio strong { color: var(--text); font-weight: 600; }
     .hero-actions {
-      display: flex; gap: 0.9rem; flex-wrap: wrap;
-      animation: fadeUp 0.6s 0.3s ease both;
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      animation: fadeUp 0.5s 0.3s ease both;
     }
     .btn {
-      padding: 0.75rem 1.5rem;
+      padding: 0.72rem 1.6rem;
       font-family: 'DM Sans', sans-serif;
-      font-size: 0.85rem; font-weight: 600;
-      text-decoration: none; border-radius: 10px;
-      transition: all 0.2s; display: inline-block;
-      cursor: pointer; border: none;
+      font-size: 0.82rem; font-weight: 600; letter-spacing: 0.02em;
+      text-decoration: none; border-radius: 6px;
+      transition: all 0.2s; display: inline-block; border: none;
     }
-    .btn-primary {
-      background: var(--accent); color: #fff;
-    }
-    .btn-primary:hover { background: #9e5224; transform: translateY(-2px); }
-    .btn-ghost {
-      background: transparent;
-      border: 1.5px solid var(--border);
-      color: var(--text);
-    }
-    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: #1e3660; transform: translateY(-2px); }
+    .btn-outline { border: 1.5px solid var(--border); color: var(--text); background: transparent; }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
 
-    /* Hero right — ID card feel */
-    .hero-right {
-      animation: fadeUp 0.6s 0.35s ease both;
-    }
+    /* ID Card */
+    .hero-right { animation: fadeUp 0.5s 0.35s ease both; }
     .id-card {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 2.2rem;
-      box-shadow: 0 4px 32px rgba(42,33,24,0.07);
+      border-radius: 16px; padding: 2rem;
+      box-shadow: 0 2px 24px rgba(28,24,20,0.06);
     }
-    .id-card-top {
+    .id-top {
       display: flex; align-items: center; gap: 1.2rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 1.5rem;
+      padding-bottom: 1.4rem; border-bottom: 1px solid var(--border);
+      margin-bottom: 1.4rem;
     }
     .avatar {
-      width: 64px; height: 64px; border-radius: 50%;
-      background: linear-gradient(135deg, #e8c4a8, #b5622b);
+      width: 56px; height: 56px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-light), var(--accent));
       display: flex; align-items: center; justify-content: center;
-      font-family: 'Lora', serif; font-size: 1.6rem;
+      font-family: 'Lora', serif; font-size: 1.4rem;
       color: white; font-style: italic; flex-shrink: 0;
     }
-    .id-name {
-      font-family: 'Lora', serif;
-      font-size: 1.25rem; font-weight: 600; margin-bottom: 0.2rem;
+    .id-name { font-family: 'Lora', serif; font-size: 1.15rem; font-weight: 600; }
+    .id-sub { font-size: 0.8rem; color: var(--muted); margin-top: 0.15rem; }
+    .id-rows { display: flex; flex-direction: column; gap: 0.85rem; }
+    .id-row { display: flex; justify-content: space-between; align-items: center; }
+    .id-label {
+      font-size: 0.7rem; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.07em; font-weight: 600;
     }
-    .id-role { font-size: 0.82rem; color: var(--muted); }
-    .id-rows { display: flex; flex-direction: column; gap: 0.9rem; }
-    .id-row {
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .id-row-label {
-      font-size: 0.75rem; color: var(--muted);
-      text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600;
-    }
-    .id-row-val {
-      font-size: 0.88rem; color: var(--text); font-weight: 500;
-    }
-    .status-dot {
+    .id-val { font-size: 0.85rem; color: var(--text); font-weight: 500; }
+    .status-pill {
       display: inline-flex; align-items: center; gap: 0.4rem;
-      font-size: 0.82rem; color: #2d7a4f; font-weight: 600;
+      font-size: 0.78rem; color: #1a6640; font-weight: 600;
+      background: #e8f5ee; border: 1px solid #b6dfc8;
+      padding: 0.2rem 0.7rem; border-radius: 99px;
     }
-    .status-dot::before {
-      content: ''; width: 7px; height: 7px;
-      background: #2d7a4f; border-radius: 50%;
-      animation: pulse 2s infinite;
+    .status-pill::before {
+      content: ''; width: 6px; height: 6px;
+      background: #1a6640; border-radius: 50%;
+      animation: blink 2s infinite;
     }
-    .id-skills {
-      margin-top: 1.5rem; padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    .id-chips-label {
+      font-size: 0.68rem; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.07em; font-weight: 600;
+      margin: 1.3rem 0 0.7rem;
+      padding-top: 1.3rem; border-top: 1px solid var(--border);
     }
-    .id-skills-label {
-      font-size: 0.72rem; color: var(--muted);
-      text-transform: uppercase; letter-spacing: 0.06em;
-      font-weight: 600; margin-bottom: 0.8rem;
-    }
-    .id-skill-chips { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+    .id-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
     .chip {
-      font-size: 0.75rem; font-weight: 500;
-      padding: 0.3rem 0.75rem;
+      font-size: 0.72rem; font-weight: 500;
+      padding: 0.28rem 0.7rem;
       background: var(--soft); border: 1px solid var(--border);
-      border-radius: 99px; color: var(--muted);
+      border-radius: 4px; color: var(--muted);
     }
 
-    /* ── DIVIDER ── */
+    /* DIVIDER */
     .divider { border: none; border-top: 1px solid var(--border); margin: 0 6%; }
 
-    /* ── ABOUT ── */
+    /* SECTIONS */
     .section { max-width: 1200px; margin: 0 auto; padding: 5.5rem 6%; }
-    .section-tag {
-      display: inline-block;
-      font-size: 0.72rem; font-weight: 700;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: 0.5rem;
+    .sec-tag {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem;
     }
-    .section-title {
+    .sec-title {
       font-family: 'Lora', serif;
-      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
       font-weight: 600; letter-spacing: -0.02em; line-height: 1.2;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.7rem;
     }
-    .section-title em { font-style: italic; color: var(--accent); }
-    .section-sub { color: var(--muted); font-size: 0.93rem; line-height: 1.8; max-width: 520px; }
+    .sec-title em { font-style: italic; color: var(--accent); }
+    .sec-sub { color: var(--muted); font-size: 0.92rem; line-height: 1.8; max-width: 500px; }
 
+    /* ABOUT */
     .about-grid {
       display: grid; grid-template-columns: 1.3fr 1fr;
       gap: 4rem; align-items: start; margin-top: 3rem;
     }
     .about-text p {
-      color: var(--muted); font-size: 0.95rem;
-      line-height: 1.95; margin-bottom: 1.1rem;
+      color: var(--muted); font-size: 0.93rem;
+      line-height: 1.95; margin-bottom: 1rem;
     }
     .about-text p strong { color: var(--text); font-weight: 600; }
     .about-text p em { color: var(--accent); font-style: normal; font-weight: 600; }
-
-    .about-cards { display: flex; flex-direction: column; gap: 0.9rem; }
+    .about-cards { display: flex; flex-direction: column; gap: 0.85rem; }
     .about-card {
-      background: var(--card);
-      border: 1px solid var(--border); border-radius: 14px;
-      padding: 1.2rem 1.4rem;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.1rem 1.3rem;
       display: flex; align-items: flex-start; gap: 1rem;
       transition: border-color 0.2s, transform 0.2s;
     }
-    .about-card:hover { border-color: var(--accent); transform: translateX(5px); }
-    .about-card-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 0.1rem; }
-    .about-card-label { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.07em; font-weight: 600; margin-bottom: 0.25rem; }
-    .about-card-val { font-size: 0.92rem; color: var(--text); font-weight: 500; }
+    .about-card:hover { border-color: var(--accent); transform: translateX(4px); }
+    .ac-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .ac-label {
+      font-size: 0.67rem; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.07em; font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+    .ac-val { font-size: 0.88rem; color: var(--text); font-weight: 500; }
 
-    /* ── SKILLS ── */
+    /* SKILLS */
     .skills-bg { background: var(--surface); }
-    .skills-inner { max-width: 1200px; margin: 0 auto; padding: 5.5rem 6%; }
+    .skills-wrap { max-width: 1200px; margin: 0 auto; padding: 5.5rem 6%; }
     .skills-grid {
       display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1.1rem; margin-top: 2.8rem;
+      gap: 1rem; margin-top: 2.8rem;
     }
-    .skill-card {
+    .sk-card {
       background: var(--card); border: 1px solid var(--border);
-      border-radius: 16px; padding: 1.8rem;
+      border-radius: 12px; padding: 1.7rem;
       transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
     }
-    .skill-card:hover {
+    .sk-card:hover {
       border-color: var(--accent); transform: translateY(-3px);
-      box-shadow: 0 8px 28px rgba(181,98,43,0.09);
+      box-shadow: 0 8px 28px rgba(44,74,124,0.08);
     }
-    .skill-emoji { font-size: 1.9rem; margin-bottom: 0.9rem; }
-    .skill-title { font-weight: 600; font-size: 0.98rem; margin-bottom: 0.35rem; }
-    .skill-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.2rem; }
-    .skill-bar { height: 4px; background: var(--border); border-radius: 99px; overflow: hidden; }
-    .skill-fill {
-      height: 100%; background: linear-gradient(90deg, var(--accent), #e89060);
+    .sk-icon { font-size: 1.6rem; margin-bottom: 0.8rem; }
+    .sk-name { font-weight: 600; font-size: 0.96rem; margin-bottom: 0.3rem; }
+    .sk-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.75; margin-bottom: 1.1rem; }
+    .sk-bar { height: 3px; background: var(--border); border-radius: 99px; overflow: hidden; }
+    .sk-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), #5b7fc4);
       border-radius: 99px; transform-origin: left;
-      animation: grow 1.2s 0.3s ease both;
+      animation: grow 1s 0.4s ease both;
     }
-    @keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-    .skill-foot {
-      display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem;
+    @keyframes grow { from{transform:scaleX(0)} to{transform:scaleX(1)} }
+    .sk-foot {
+      display: flex; justify-content: space-between;
+      align-items: center; margin-top: 0.45rem;
     }
-    .skill-where { font-size: 0.7rem; color: var(--muted); }
-    .skill-pct { font-size: 0.75rem; color: var(--accent); font-weight: 600; }
+    .sk-sem { font-size: 0.68rem; color: var(--muted); }
+    .sk-pct { font-size: 0.72rem; color: var(--accent); font-weight: 700; }
 
-    /* ── PROJECTS ── */
-    .projects-grid {
+    /* PROJECTS */
+    .proj-grid {
       display: grid; grid-template-columns: 1fr 1fr;
-      gap: 1.1rem; margin-top: 2.8rem;
+      gap: 1rem; margin-top: 2.8rem;
     }
     .proj-card {
       background: var(--card); border: 1px solid var(--border);
-      border-radius: 16px; padding: 1.9rem;
-      position: relative;
+      border-radius: 12px; padding: 1.8rem;
       transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
     }
     .proj-card:hover {
       border-color: var(--accent); transform: translateY(-3px);
-      box-shadow: 0 8px 28px rgba(181,98,43,0.09);
+      box-shadow: 0 8px 28px rgba(44,74,124,0.08);
     }
     .proj-card.wide { grid-column: span 2; }
-    .proj-top {
-      display: flex; justify-content: space-between; align-items: flex-start;
-      margin-bottom: 1rem;
+    .proj-head {
+      display: flex; justify-content: space-between;
+      align-items: center; margin-bottom: 1rem;
     }
-    .proj-tag {
-      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.07em;
-      text-transform: uppercase; background: var(--accent-light);
-      color: var(--accent); padding: 0.25rem 0.7rem; border-radius: 99px;
-      border: 1px solid #e8c4a8;
+    .proj-lang {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.07em;
+      text-transform: uppercase; color: var(--accent);
+      background: var(--accent-light); border: 1px solid var(--accent-mid);
+      padding: 0.22rem 0.7rem; border-radius: 4px;
     }
-    .proj-sem { font-size: 0.75rem; color: var(--muted); }
+    .proj-sem { font-size: 0.72rem; color: var(--muted); }
     .proj-title {
       font-family: 'Lora', serif;
-      font-size: 1.2rem; font-weight: 600; margin-bottom: 0.6rem;
-      letter-spacing: -0.01em;
+      font-size: 1.15rem; font-weight: 600; margin-bottom: 0.55rem;
+      letter-spacing: -0.01em; color: var(--text);
     }
-    .proj-desc { font-size: 0.86rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.3rem; }
-    .proj-stack { display: flex; gap: 0.45rem; flex-wrap: wrap; }
-    .proj-tech {
-      font-size: 0.72rem; font-weight: 500;
-      padding: 0.25rem 0.65rem;
-      background: var(--soft); border: 1px solid var(--border);
-      border-radius: 7px; color: var(--muted);
+    .proj-status {
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.04em;
+      padding: 0.18rem 0.55rem; border-radius: 4px;
+      margin-left: 0.6rem; vertical-align: middle;
     }
-    .proj-badge {
-      display: inline-flex; align-items: center; gap: 0.35rem;
-      font-size: 0.68rem; font-weight: 700;
-      padding: 0.2rem 0.6rem; border-radius: 99px; margin-left: 0.5rem;
-    }
-    .badge-done { background: #e8f5ee; color: #2d7a4f; }
-    .badge-wip  { background: #fef3c7; color: #b45309; }
-    .badge-wip::before, .badge-done::before {
+    .proj-status::before {
       content: ''; width: 5px; height: 5px;
       border-radius: 50%; background: currentColor;
     }
-
-    /* ── CONTACT ── */
-    .contact-wrap {
-      background: #2a2118;
+    .s-done { background: #e8f5ee; color: #1a6640; }
+    .s-wip  { background: #fef3c7; color: #92560a; }
+    .proj-desc { font-size: 0.84rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.2rem; }
+    .proj-stack { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .proj-tech {
+      font-size: 0.7rem; font-weight: 500;
+      padding: 0.22rem 0.6rem;
+      background: var(--soft); border: 1px solid var(--border);
+      border-radius: 4px; color: var(--muted);
     }
+
+    /* CONTACT */
+    .contact-wrap { background: #18202e; }
     .contact-inner {
-      max-width: 1200px; margin: 0 auto;
-      padding: 5.5rem 6%;
+      max-width: 1200px; margin: 0 auto; padding: 5.5rem 6%;
       display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
     }
-    .contact-left .section-tag  { color: #c89070; }
-    .contact-left .section-title { color: #faf7f2; }
-    .contact-left .section-title em { color: #e89060; }
-    .contact-left p { color: #7a6e60; font-size: 0.93rem; line-height: 1.9; margin-top: 1rem; }
-    .contact-left p strong { color: #b8a898; font-weight: 600; }
-    .contact-items { display: flex; flex-direction: column; gap: 0.9rem; }
-    .contact-item {
+    .contact-left .sec-tag { color: #7a9fd4; }
+    .contact-left .sec-title { color: #eef2f9; }
+    .contact-left .sec-title em { color: #7a9fd4; }
+    .contact-left p { color: #5a6880; font-size: 0.92rem; line-height: 1.9; margin-top: 1rem; }
+    .contact-left p strong { color: #8a9eb8; font-weight: 600; }
+    .c-items { display: flex; flex-direction: column; gap: 0.85rem; }
+    .c-item {
       display: flex; align-items: center; gap: 1rem;
-      background: rgba(255,255,255,0.04);
+      background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 14px; padding: 1.1rem 1.3rem;
+      border-radius: 10px; padding: 1.1rem 1.3rem;
       text-decoration: none;
       transition: background 0.2s, border-color 0.2s;
     }
-    .contact-item:hover {
-      background: rgba(255,255,255,0.07);
-      border-color: rgba(200,144,112,0.4);
-    }
-    .ci-icon {
-      width: 40px; height: 40px; border-radius: 10px;
+    .c-item:hover {
       background: rgba(255,255,255,0.06);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem; flex-shrink: 0;
+      border-color: rgba(122,159,212,0.35);
     }
-    .ci-label { font-size: 0.68rem; color: #5a5048; text-transform: uppercase; letter-spacing: 0.07em; font-weight: 600; margin-bottom: 0.2rem; }
-    .ci-val { font-size: 0.88rem; color: #d0c4b8; font-weight: 500; }
+    .c-icon {
+      width: 38px; height: 38px; border-radius: 8px;
+      background: rgba(255,255,255,0.05);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+    }
+    .c-label {
+      font-size: 0.66rem; color: #3a4a60;
+      text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+    .c-val { font-size: 0.86rem; color: #c8d4e8; font-weight: 500; }
 
-    /* ── FOOTER ── */
+    /* FOOTER */
     footer {
-      background: #221c14;
+      background: #111820;
       padding: 1.4rem 6%;
       display: flex; justify-content: space-between; align-items: center;
-      border-top: 1px solid rgba(255,255,255,0.05);
+      border-top: 1px solid rgba(255,255,255,0.04);
     }
-    .footer-name { font-family: 'Lora', serif; font-size: 0.95rem; color: #4a4038; font-style: italic; }
-    .footer-note { font-size: 0.75rem; color: #3a3028; }
+    .footer-logo { font-family: 'Lora', serif; font-size: 0.9rem; color: #2a3a50; font-style: italic; }
+    .footer-copy { font-size: 0.72rem; color: #2a3a50; }
 
-    /* ── ANIMATIONS ── */
+    /* ANIMATIONS */
     @keyframes fadeUp {
-      from { opacity:0; transform:translateY(22px); }
+      from { opacity:0; transform:translateY(20px); }
       to   { opacity:1; transform:translateY(0); }
     }
     .reveal {
-      opacity: 0; transform: translateY(26px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
     .reveal.visible { opacity:1; transform:translateY(0); }
 
-    /* ── RESPONSIVE ── */
+    /* RESPONSIVE */
     @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; gap: 3rem; }
-      .about-grid, .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero, .about-grid, .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
       .skills-grid { grid-template-columns: 1fr 1fr; }
-      .projects-grid { grid-template-columns: 1fr; }
+      .proj-grid { grid-template-columns: 1fr; }
       .proj-card.wide { grid-column: span 1; }
     }
     @media (max-width: 560px) {
@@ -398,73 +371,70 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">Pooja <span>.</span></div>
+  <div class="nav-logo">Pooja<span>.</span></div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <div class="nav-badge">BCA 2nd Year</div>
+  <div class="nav-badge">BCA · 2nd Year</div>
 </nav>
 
 <!-- HERO -->
-<div style="max-width:1200px;margin:0 auto;">
+<div class="hero-wrap">
   <div class="hero">
     <div class="hero-left">
-      <div class="hero-tag">👩‍💻 Open to internships & opportunities</div>
+      <div class="hero-eyebrow">Available for Internships</div>
       <h1>
-        Hi, I'm <em>Pooja.</em><br/>
-        BCA Student &<br/>Aspiring Developer.
+        I'm <em>Pooja.</em><br/>
+        BCA Student &<br/>Developer in Progress.
       </h1>
       <p class="hero-bio">
-        I'm in my <strong>2nd year of BCA</strong> and I'm genuinely passionate
-        about coding. I've learned <strong>C, Python, Java, HTML/CSS & SQL</strong>
-        through my college curriculum — and I'm slowly turning that into
-        real projects. Still figuring things out, but loving every bit of it. 🌸
+        Pursuing a <strong>Bachelor of Computer Applications</strong> — 2nd year.
+        I build with <strong>Python, Java, HTML/CSS and SQL</strong>.
+        I approach every project with focus, curiosity, and a commitment
+        to writing clean, purposeful code.
       </p>
       <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary">See My Work</a>
-        <a href="mailto:poojapooja28072007@gmail.com" class="btn btn-ghost">Say Hello ✉️</a>
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="mailto:poojapooja28072007@gmail.com" class="btn btn-outline">Contact Me</a>
       </div>
     </div>
-
     <div class="hero-right">
       <div class="id-card">
-        <div class="id-card-top">
+        <div class="id-top">
           <div class="avatar">P</div>
           <div>
             <div class="id-name">Pooja</div>
-            <div class="id-role">BCA Student — 2nd Year</div>
+            <div class="id-sub">BCA Student — 2nd Year</div>
           </div>
         </div>
         <div class="id-rows">
           <div class="id-row">
-            <span class="id-row-label">Degree</span>
-            <span class="id-row-val">Bachelor of Computer Applications</span>
+            <span class="id-label">Degree</span>
+            <span class="id-val">Bachelor of Computer Applications</span>
           </div>
           <div class="id-row">
-            <span class="id-row-label">Year</span>
-            <span class="id-row-val">2nd Year (Semester 3–4)</span>
+            <span class="id-label">Year</span>
+            <span class="id-val">2nd Year · Semester 3</span>
           </div>
           <div class="id-row">
-            <span class="id-row-label">Focus</span>
-            <span class="id-row-val">Web Dev + Programming</span>
+            <span class="id-label">Specialisation</span>
+            <span class="id-val">Programming & Web Development</span>
           </div>
           <div class="id-row">
-            <span class="id-row-label">Status</span>
-            <span class="status-dot">Actively Learning</span>
+            <span class="id-label">Status</span>
+            <span class="status-pill">Actively Learning</span>
           </div>
         </div>
-        <div class="id-skills">
-          <div class="id-skills-label">Languages I Know</div>
-          <div class="id-skill-chips">
-            <span class="chip">C / C++</span>
-            <span class="chip">Python</span>
-            <span class="chip">Java</span>
-            <span class="chip">HTML & CSS</span>
-            <span class="chip">SQL</span>
-          </div>
+        <div class="id-chips-label">Technical Skills</div>
+        <div class="id-chips">
+          <span class="chip">C / C++</span>
+          <span class="chip">Python</span>
+          <span class="chip">Java</span>
+          <span class="chip">HTML & CSS</span>
+          <span class="chip">SQL</span>
         </div>
       </div>
     </div>
@@ -475,66 +445,64 @@
 
 <!-- ABOUT -->
 <section class="section" id="about">
-  <div class="section-tag">About Me</div>
-  <div class="section-title">A student who<br/><em>loves to build things.</em></div>
+  <div class="sec-tag">About Me</div>
+  <div class="sec-title">Building skills,<br/><em>one project at a time.</em></div>
   <div class="about-grid">
     <div class="about-text reveal">
       <p>
-        Hey! I'm <strong>Pooja</strong>, currently in my <em>2nd year of BCA</em>.
-        I chose BCA because I genuinely wanted to understand how computers and
-        software work — not just use them. And honestly, it's been one of the best
-        decisions I've made.
+        I'm <strong>Pooja</strong>, a second-year BCA student with a strong
+        foundation in programming and a growing interest in web and software
+        development. I chose BCA with a clear goal — to understand how
+        software is designed, built, and deployed.
       </p>
       <p>
-        In college, I've studied <strong>C, C++, Python, Java, HTML/CSS and SQL</strong>.
-        Some subjects clicked instantly, some took time — Python and HTML/CSS are
-        my favourites so far. Java is still making me work for it. 😅
+        My academic curriculum has given me hands-on experience with
+        <em>C, C++, Python, Java, HTML/CSS and SQL</em>. I don't just
+        complete assignments — I use them as opportunities to understand
+        the logic behind the code and write solutions that are clean
+        and structured.
       </p>
       <p>
-        Most of my projects right now come from <strong>college assignments and
-        mini projects</strong> — but I try to go beyond just "making it work."
-        I want to understand <em>why</em> it works. That curiosity is what drives me.
-      </p>
-      <p>
-        I'm looking forward to learning more, building more, and eventually
-        landing an <strong>internship</strong> where I can contribute and grow.
-        One step at a time. 🌸
+        I am currently strengthening my <strong>Java and database</strong>
+        skills while working on personal mini projects to build a practical
+        portfolio. My next goal is to gain real-world experience through
+        an internship where I can contribute meaningfully and grow as a developer.
       </p>
     </div>
     <div class="about-cards reveal">
       <div class="about-card">
-        <div class="about-card-icon">🎓</div>
+        <div class="ac-icon">🎓</div>
         <div>
-          <div class="about-card-label">Education</div>
-          <div class="about-card-val">BCA — 2nd Year (ongoing)</div>
+          <div class="ac-label">Education</div>
+          <div class="ac-val">BCA — 2nd Year (Ongoing)</div>
         </div>
       </div>
       <div class="about-card">
-        <div class="about-card-icon">❤️</div>
+        <div class="ac-icon">💡</div>
         <div>
-          <div class="about-card-label">Favourite So Far</div>
-          <div class="about-card-val">Python & HTML/CSS</div>
+          <div class="ac-label">Strongest Skill</div>
+          <div class="ac-val">Python & HTML/CSS</div>
         </div>
       </div>
       <div class="about-card">
-        <div class="about-card-icon">📚</div>
+        <div class="ac-icon">📖</div>
         <div>
-          <div class="about-card-label">Currently Studying</div>
-          <div class="about-card-val">Java, DBMS & Web Basics</div>
+          <div class="ac-label">Currently Focused On</div>
+          <div class="ac-val">Java OOP & Database Design</div>
         </div>
       </div>
       <div class="about-card">
-        <div class="about-card-icon">🎯</div>
+        <div class="ac-icon">🎯</div>
         <div>
-          <div class="about-card-label">Goal</div>
-          <div class="about-card-val">Internship after 2nd year</div>
+          <div class="ac-label">Career Goal</div>
+          <div class="ac-val">Software Developer / Web Developer</div>
         </div>
       </div>
       <div class="about-card">
-        <div class="about-card-icon">✉️</div>
+        <div class="ac-icon">📬</div>
         <div>
-          <div class="about-card-label">Email</div>
-          <div class="about-card-val">poojapooja28072007@gmail.com</div>
+          <div class="ac-label">Email</div>
+          <div class="ac-val">poojapooja28072007@gmail.com</div>
         </div>
       </div>
     </div>
@@ -545,75 +513,75 @@
 
 <!-- SKILLS -->
 <div class="skills-bg" id="skills">
-  <div class="skills-inner">
-    <div class="section-tag">Skills</div>
-    <div class="section-title">What I've <em>actually learned</em></div>
-    <p class="section-sub">Honest levels — what I've studied in BCA and genuinely practiced. No fake "expert" badges here. 😊</p>
+  <div class="skills-wrap">
+    <div class="sec-tag">Technical Skills</div>
+    <div class="sec-title">Languages &<br/><em>Technologies</em></div>
+    <p class="sec-sub">Skills developed through BCA curriculum, practical assignments and self-directed learning.</p>
     <div class="skills-grid">
 
-      <div class="skill-card reveal">
-        <div class="skill-emoji">🐍</div>
-        <div class="skill-title">Python</div>
-        <div class="skill-desc">Learned in 1st year. I can write programs, work with loops, functions, file handling and basic logic. My most comfortable language.</div>
-        <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
-        <div class="skill-foot">
-          <span class="skill-where">Studied in BCA Sem 1</span>
-          <span class="skill-pct">75%</span>
+      <div class="sk-card reveal">
+        <div class="sk-icon">🐍</div>
+        <div class="sk-name">Python</div>
+        <div class="sk-desc">Proficient in core Python — data structures, functions, file I/O and logic-based problem solving. Most practiced language to date.</div>
+        <div class="sk-bar"><div class="sk-fill" style="width:75%"></div></div>
+        <div class="sk-foot">
+          <span class="sk-sem">BCA Semester 1</span>
+          <span class="sk-pct">Intermediate · 75%</span>
         </div>
       </div>
 
-      <div class="skill-card reveal">
-        <div class="skill-emoji">🎨</div>
-        <div class="skill-title">HTML & CSS</div>
-        <div class="skill-desc">Can build web pages from scratch — layouts, styling, responsive basics. I enjoy the visual side of coding the most.</div>
-        <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
-        <div class="skill-foot">
-          <span class="skill-where">Studied in BCA Sem 2</span>
-          <span class="skill-pct">70%</span>
+      <div class="sk-card reveal">
+        <div class="sk-icon">🌐</div>
+        <div class="sk-name">HTML & CSS</div>
+        <div class="sk-desc">Capable of building structured, styled and responsive web pages from scratch. Comfortable with Flexbox, layouts and UI design basics.</div>
+        <div class="sk-bar"><div class="sk-fill" style="width:70%"></div></div>
+        <div class="sk-foot">
+          <span class="sk-sem">BCA Semester 2</span>
+          <span class="sk-pct">Intermediate · 70%</span>
         </div>
       </div>
 
-      <div class="skill-card reveal">
-        <div class="skill-emoji">⚙️</div>
-        <div class="skill-title">C / C++</div>
-        <div class="skill-desc">My foundation. Learned programming fundamentals — arrays, pointers, structures. C taught me how to actually think logically.</div>
-        <div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
-        <div class="skill-foot">
-          <span class="skill-where">Studied in BCA Sem 1</span>
-          <span class="skill-pct">65%</span>
+      <div class="sk-card reveal">
+        <div class="sk-icon">⚙️</div>
+        <div class="sk-name">C / C++</div>
+        <div class="sk-desc">Strong grasp of programming fundamentals — arrays, pointers, structures and memory concepts. Formed the base of my logical thinking.</div>
+        <div class="sk-bar"><div class="sk-fill" style="width:65%"></div></div>
+        <div class="sk-foot">
+          <span class="sk-sem">BCA Semester 1</span>
+          <span class="sk-pct">Intermediate · 65%</span>
         </div>
       </div>
 
-      <div class="skill-card reveal">
-        <div class="skill-emoji">☕</div>
-        <div class="skill-title">Java</div>
-        <div class="skill-desc">Currently studying in 2nd year. Understanding OOP — classes, objects, inheritance. Still getting comfortable with it.</div>
-        <div class="skill-bar"><div class="skill-fill" style="width:50%"></div></div>
-        <div class="skill-foot">
-          <span class="skill-where">Studying in BCA Sem 3</span>
-          <span class="skill-pct">50%</span>
+      <div class="sk-card reveal">
+        <div class="sk-icon">☕</div>
+        <div class="sk-name">Java</div>
+        <div class="sk-desc">Currently developing proficiency in Object-Oriented Programming — classes, inheritance, polymorphism and exception handling.</div>
+        <div class="sk-bar"><div class="sk-fill" style="width:50%"></div></div>
+        <div class="sk-foot">
+          <span class="sk-sem">BCA Semester 3 · In Progress</span>
+          <span class="sk-pct">Beginner–Mid · 50%</span>
         </div>
       </div>
 
-      <div class="skill-card reveal">
-        <div class="skill-emoji">🗄️</div>
-        <div class="skill-title">SQL & Database</div>
-        <div class="skill-desc">Learned DBMS concepts and SQL queries — SELECT, JOIN, CREATE, INSERT. Built a small database project for college.</div>
-        <div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div>
-        <div class="skill-foot">
-          <span class="skill-where">Studied in BCA Sem 2–3</span>
-          <span class="skill-pct">60%</span>
+      <div class="sk-card reveal">
+        <div class="sk-icon">🗄️</div>
+        <div class="sk-name">SQL & DBMS</div>
+        <div class="sk-desc">Solid understanding of relational databases — table design, normalization, and queries including SELECT, JOIN, GROUP BY and transactions.</div>
+        <div class="sk-bar"><div class="sk-fill" style="width:62%"></div></div>
+        <div class="sk-foot">
+          <span class="sk-sem">BCA Semester 2–3</span>
+          <span class="sk-pct">Intermediate · 62%</span>
         </div>
       </div>
 
-      <div class="skill-card reveal">
-        <div class="skill-emoji">🌱</div>
-        <div class="skill-title">Next on My List</div>
-        <div class="skill-desc">Planning to learn JavaScript properly, explore React, and get into backend development after finishing my current semester.</div>
-        <div class="skill-bar"><div class="skill-fill" style="width:10%"></div></div>
-        <div class="skill-foot">
-          <span class="skill-where">Self-learning — coming soon</span>
-          <span class="skill-pct">Just starting</span>
+      <div class="sk-card reveal">
+        <div class="sk-icon">📈</div>
+        <div class="sk-name">Currently Exploring</div>
+        <div class="sk-desc">Expanding into JavaScript for frontend interactivity and planning to study backend development and frameworks in upcoming semesters.</div>
+        <div class="sk-bar"><div class="sk-fill" style="width:12%"></div></div>
+        <div class="sk-foot">
+          <span class="sk-sem">Self-Learning · Upcoming</span>
+          <span class="sk-pct">Beginner · 12%</span>
         </div>
       </div>
 
@@ -623,96 +591,100 @@
 
 <!-- PROJECTS -->
 <section class="section" id="projects">
-  <div class="section-tag">Projects</div>
-  <div class="section-title">Things I've <em>made</em></div>
-  <p class="section-sub">College assignments and mini projects — small but real. Every one taught me something new.</p>
-  <div class="projects-grid">
+  <div class="sec-tag">Projects</div>
+  <div class="sec-title">Academic &<br/><em>Personal Work</em></div>
+  <p class="sec-sub">Projects completed through BCA coursework and independent practice — focused on applying concepts to real problems.</p>
+  <div class="proj-grid">
 
     <div class="proj-card wide reveal">
-      <div class="proj-top">
-        <span class="proj-tag">Python</span>
-        <span class="proj-sem">BCA Sem 1 Project</span>
+      <div class="proj-head">
+        <span class="proj-lang">Python</span>
+        <span class="proj-sem">BCA Semester 1 — Major Assignment</span>
       </div>
       <div class="proj-title">
         Student Result Management System
-        <span class="proj-badge badge-done">Completed</span>
+        <span class="proj-status s-done">Completed</span>
       </div>
       <div class="proj-desc">
-        A Python-based program where you can add students, enter their marks, 
-        calculate grades and display results. Built this as my first big 
-        college assignment. It has a menu-driven interface with file handling 
-        to save and load student data — I was really proud of this one. 🎉
+        A menu-driven CLI application to manage student academic records.
+        Features include adding students, recording subject-wise marks,
+        automatic grade calculation and persistent data storage using
+        file handling. Designed with modular functions for maintainability
+        and clarity.
       </div>
       <div class="proj-stack">
         <span class="proj-tech">Python</span>
         <span class="proj-tech">File Handling</span>
-        <span class="proj-tech">Functions</span>
-        <span class="proj-tech">CLI</span>
+        <span class="proj-tech">Modular Functions</span>
+        <span class="proj-tech">CLI Interface</span>
       </div>
     </div>
 
     <div class="proj-card reveal">
-      <div class="proj-top">
-        <span class="proj-tag">HTML & CSS</span>
-        <span class="proj-sem">BCA Sem 2 Mini Project</span>
+      <div class="proj-head">
+        <span class="proj-lang">HTML & CSS</span>
+        <span class="proj-sem">BCA Semester 2 — Mini Project</span>
       </div>
       <div class="proj-title">
-        College Website UI
-        <span class="proj-badge badge-done">Completed</span>
+        College Website — Front End
+        <span class="proj-status s-done">Completed</span>
       </div>
       <div class="proj-desc">
-        Designed a basic college website front-end for a class mini project. 
-        Made it responsive with a navbar, homepage, about section and contact 
-        form. Learned a lot about CSS layouts doing this.
+        Designed and developed a multi-page college website interface with
+        a structured navigation bar, hero section, about page and contact
+        form. Implemented responsive layout using Flexbox and CSS Grid.
       </div>
       <div class="proj-stack">
-        <span class="proj-tech">HTML</span>
-        <span class="proj-tech">CSS</span>
+        <span class="proj-tech">HTML5</span>
+        <span class="proj-tech">CSS3</span>
         <span class="proj-tech">Flexbox</span>
-        <span class="proj-tech">Responsive</span>
+        <span class="proj-tech">Responsive Design</span>
       </div>
     </div>
 
     <div class="proj-card reveal">
-      <div class="proj-top">
-        <span class="proj-tag">SQL</span>
-        <span class="proj-sem">BCA Sem 3 DBMS Project</span>
+      <div class="proj-head">
+        <span class="proj-lang">SQL</span>
+        <span class="proj-sem">BCA Semester 3 — DBMS Practical</span>
       </div>
       <div class="proj-title">
-        Library Database
-        <span class="proj-badge badge-done">Completed</span>
+        Library Management Database
+        <span class="proj-status s-done">Completed</span>
       </div>
       <div class="proj-desc">
-        Designed a database for a library system with tables for books, 
-        members and transactions. Wrote SQL queries for searching books, 
-        issuing and returning — submitted as my DBMS practical project.
+        Designed a normalized relational database for a library system.
+        Includes tables for books, members and borrow transactions.
+        Implemented complex queries with JOINs, subqueries and aggregate
+        functions for reporting and data retrieval.
       </div>
       <div class="proj-stack">
         <span class="proj-tech">MySQL</span>
-        <span class="proj-tech">SQL Queries</span>
         <span class="proj-tech">ER Diagram</span>
-        <span class="proj-tech">Joins</span>
+        <span class="proj-tech">Normalization</span>
+        <span class="proj-tech">Joins & Subqueries</span>
       </div>
     </div>
 
     <div class="proj-card reveal">
-      <div class="proj-top">
-        <span class="proj-tag">Java</span>
-        <span class="proj-sem">BCA Sem 3 — Ongoing</span>
+      <div class="proj-head">
+        <span class="proj-lang">Java</span>
+        <span class="proj-sem">BCA Semester 3 — OOP Project</span>
       </div>
       <div class="proj-title">
-        Simple Banking App
-        <span class="proj-badge badge-wip">In Progress</span>
+        Banking System Application
+        <span class="proj-status s-wip">In Progress</span>
       </div>
       <div class="proj-desc">
-        Currently building a Java OOP project for college — a simple banking 
-        system with account creation, deposit, withdrawal. Practicing classes, 
-        inheritance and exception handling as I go. Still learning! 😅
+        Developing an object-oriented banking application demonstrating
+        core Java OOP principles. Implements account management, deposit
+        and withdrawal operations, with exception handling for invalid
+        transactions and inheritance-based account types.
       </div>
       <div class="proj-stack">
         <span class="proj-tech">Java</span>
-        <span class="proj-tech">OOP</span>
+        <span class="proj-tech">OOP Principles</span>
         <span class="proj-tech">Exception Handling</span>
+        <span class="proj-tech">Inheritance</span>
       </div>
     </div>
 
@@ -723,35 +695,35 @@
 <div class="contact-wrap" id="contact">
   <div class="contact-inner">
     <div class="contact-left reveal">
-      <div class="section-tag">Contact</div>
-      <div class="section-title">Let's <em>connect.</em></div>
+      <div class="sec-tag">Get In Touch</div>
+      <div class="sec-title">Open to<br/><em>Opportunities.</em></div>
       <p>
-        I'm a 2nd year BCA student looking to connect with
-        <strong>developers, mentors and opportunities.</strong>
-        Whether it's an internship, a project collab, or just
-        advice — I'd love to hear from you. I always reply. 🌸
+        I am actively looking for <strong>internship opportunities</strong>
+        to apply my skills in a professional environment. I am also open
+        to collaborations, mentorship and project discussions.
+        I respond to every message.
       </p>
     </div>
-    <div class="contact-items reveal">
-      <a href="mailto:poojapooja28072007@gmail.com" class="contact-item">
-        <div class="ci-icon">✉️</div>
+    <div class="c-items reveal">
+      <a href="mailto:poojapooja28072007@gmail.com" class="c-item">
+        <div class="c-icon">✉️</div>
         <div>
-          <div class="ci-label">Email</div>
-          <div class="ci-val">poojapooja28072007@gmail.com</div>
+          <div class="c-label">Email</div>
+          <div class="c-val">poojapooja28072007@gmail.com</div>
         </div>
       </a>
-      <a href="#" class="contact-item">
-        <div class="ci-icon">💼</div>
+      <a href="#" class="c-item">
+        <div class="c-icon">💼</div>
         <div>
-          <div class="ci-label">LinkedIn</div>
-          <div class="ci-val">Add your LinkedIn here</div>
+          <div class="c-label">LinkedIn</div>
+          <div class="c-val">linkedin.com/in/yourprofile</div>
         </div>
       </a>
-      <a href="#" class="contact-item">
-        <div class="ci-icon">🐙</div>
+      <a href="#" class="c-item">
+        <div class="c-icon">🐙</div>
         <div>
-          <div class="ci-label">GitHub</div>
-          <div class="ci-val">Add your GitHub here</div>
+          <div class="c-label">GitHub</div>
+          <div class="c-val">github.com/yourusername</div>
         </div>
       </a>
     </div>
@@ -760,19 +732,19 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-name">Pooja — BCA Student</div>
-  <div class="footer-note">Built this myself, one line at a time 🌸 — 2024</div>
+  <div class="footer-logo">Pooja — BCA Student & Developer</div>
+  <div class="footer-copy">Designed & developed by Pooja · 2024</div>
 </footer>
 
 <script>
   const observer = new IntersectionObserver(entries => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting)
-        setTimeout(() => entry.target.classList.add('visible'), i * 90);
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 
 </body>
-</html>
+  </html>
